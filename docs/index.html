@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/main.css">
+  
+  <title>ex - conversor de moedas</title>
+</head>
+<body>
+  <div class="conteudo">
+    <nav>
+      <a href="#"><img src="./assets/logo.svg" alt="logo" class="logo"></a>
+    </nav>
+  
+    <form onSubmit="return false;">
+      <div class="flex-row">
+        <div>
+          <label for="valor">valor: </label>
+          <input 
+          id="valor"
+          name="valor"
+          type="number"
+          step="0.01"
+          min="0"
+          placeholder="Digite o valor..."
+
+          />
+        </div>
+        <div>
+          <label for="data">data de conversão: </label>
+          <input 
+          id="data"
+          name="data"
+          type="date"
+          placeholder="dd/mm/aaaa"
+          required
+          
+          />
+        </div>
+      </div>
+      
+      <div class="flex-column">
+        <div>
+          <label for="exDe">converter de: </label>
+          <select name="exDe" id="exDe">
+            <option value="AUD">(AUD) Dólar australiano</option>
+            <option value="BGN">(BGN) Lev búlgaro</option>
+            <option value="BRL" selected>(BRL) Real</option>
+            <option value="CAD">(CAD) Dólar canadense</option>
+            <option value="CHF">(CHF) Franco suíço</option>
+            <option value="CNY">(CNY) Renminbi</option>
+            <option value="CZK">(CZK) Coroa checa</option>
+            <option value="DKK">(DKK) Coroa dinamarquesa</option>
+            <option value="EUR">(EUR) Euro</option>
+            <option value="GBP">(GBP) Libra Esterlina</option>
+            <option value="HKD">(HKD) Dólar de Hong Kong</option>
+            <option value="HRK">(HRK) Kuna croata</option>
+            <option value="HUF">(HUF) Forint</option>
+            <option value="IDR">(IDR) Rupia indonésia</option>
+            <option value="ILS">(ILS) Shekel</option>
+            <option value="INR">(INR) Rupia indiana</option>
+            <option value="ISK">(ISK) Coroa islandesa</option>
+            <option value="JPY">(JPY) Iene</option>
+            <option value="KRW">(KRW) Won sul coreano</option>
+            <option value="MXN">(MXN) Peso mexicano</option>
+            <option value="MYR">(MYR) Ringgit</option>
+            <option value="NOK">(NOK) Coroa norueguesa</option>
+            <option value="NZD">(NZD) Dólar da Nova Zelândia</option>
+            <option value="PHP">(PHP) Peso filipino</option>
+            <option value="PLN">(PLN) Zloty</option>
+            <option value="RON">(RON) Leu romeno</option>
+            <option value="RUB">(RUB) Rublo</option>
+            <option value="SEK">(SEK) Coroa sueca</option>
+            <option value="SGD">(SGD) Dólar de Singapura</option>
+            <option value="THB">(THB) Baht</option>
+            <option value="TRY">(TRY) Nova Lira turca</option>
+            <option value="USD">(USD) Dólar americano</option>
+            <option value="ZAR">(ZAR) Rand </option>
+          </select>
+        </div>
+
+        <button type="button"><i data-eva="swap"></i></button>
+
+        <div>
+          <label for="exPara">para: </label>
+          <select name="exPara" id="exPara">
+            <option value="AUD">(AUD) Dólar australiano</option>
+            <option value="BGN">(BGN) Lev búlgaro</option>
+            <option value="BRL">(BRL) Real</option>
+            <option value="CAD">(CAD) Dólar canadense</option>
+            <option value="CHF">(CHF) Franco suíço</option>
+            <option value="CNY">(CNY) Renminbi</option>
+            <option value="CZK">(CZK) Coroa checa</option>
+            <option value="DKK">(DKK) Coroa dinamarquesa</option>
+            <option value="EUR">(EUR) Euro</option>
+            <option value="GBP">(GBP) Libra Esterlina</option>
+            <option value="HKD">(HKD) Dólar de Hong Kong</option>
+            <option value="HRK">(HRK) Kuna croata</option>
+            <option value="HUF">(HUF) Forint</option>
+            <option value="IDR">(IDR) Rupia indonésia</option>
+            <option value="ILS">(ILS) Shekel</option>
+            <option value="INR">(INR) Rupia indiana</option>
+            <option value="ISK">(ISK) Coroa islandesa</option>
+            <option value="JPY">(JPY) Iene</option>
+            <option value="KRW">(KRW) Won sul coreano</option>
+            <option value="MXN">(MXN) Peso mexicano</option>
+            <option value="MYR">(MYR) Ringgit</option>
+            <option value="NOK">(NOK) Coroa norueguesa</option>
+            <option value="NZD">(NZD) Dólar da Nova Zelândia</option>
+            <option value="PHP">(PHP) Peso filipino</option>
+            <option value="PLN">(PLN) Zloty</option>
+            <option value="RON">(RON) Leu romeno</option>
+            <option value="RUB">(RUB) Rublo</option>
+            <option value="SEK">(SEK) Coroa sueca</option>
+            <option value="SGD">(SGD) Dólar de Singapura</option>
+            <option value="THB">(THB) Baht</option>
+            <option value="TRY">(TRY) Nova Lira turca</option>
+            <option value="USD" selected>(USD) Dólar americano</option>
+            <option value="ZAR">(ZAR) Rand </option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="resultado">
+    <div class="msg">
+      <p><span class="de"></span> <span class="de-cod"></span></p>
+      <p>igual a</p>
+      <p><span class="para"></span> <span class="para-cod"></span></p>
+    </div>
+    <div class="info">
+      <p>data de conversão: <span class="data"></span></p>
+      <p>taxa de conversão: <span class="taxa"></span> <span class="para-cod">USD</span></p>
+    </div> 
+  </div>
+    
+  <div class="chartContainer">
+    <canvas id='chart'></canvas>
+  </div>
+
+  <div class="disclaimer">
+    <p>Estes dados foram retirados do Banco Central Europeu: <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html">ecb.europa.eu/stats</a></p>
+    <p>Os dados são atualizados uma vez por dia, exceto aos fins de semana (sendo contabilizadas apenas as taxas do último dia útil)</p>
+    <p>Não nos responsabilizamos por quaisquer erros na base de dados</p>
+  </div>
+
+  
+  <script src="https://unpkg.com/eva-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/chart.js"></script>
+  <script>
+    eva.replace();
+  </script>
+
+</body>
+</html>

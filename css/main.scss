@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+:root {
+  --cor-azul: #00ADB5;
+  --cor-preta: #393E46;
+  --cor-cinza: #C4C4C4;
+  --cor-vermelho: #F13F3F;
+  --sidebar-size: 58px;
+  --icon-size: 18px;
+}
+
+* {
+  outline: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body, input, button, select {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+li {
+  list-style: none;
+}
+
+body, input, select {
+  color: var(--cor-preta);
+}
+
+input, select {
+  display: block;
+}
+
+.logo {
+  padding: 20px 10px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+    /* width */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #f1f2f3;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+}
+
+.conteudo {
+  /* width: calc(100% - var(--sidebar-size)); ->> COM SIDEBAR */ 
+  width: 100%;
+  margin: 0 auto;
+
+  form {
+    padding: 0 10px;
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      cursor: text;
+    }
+
+    select {
+      cursor: pointer;
+    }
+    
+    input, select {
+      width: 100%;
+      height: 48px;
+      
+      padding: 10px;
+      
+      border: 1px solid var(--cor-cinza);
+      border-radius: 8px;
+      text-align: center;
+      text-align-last: center;
+      
+      &:focus {
+        border-color: var(--cor-azul);
+        box-shadow: inset 0 0 1px var(--cor-azul);
+        transition: .2s;
+      }
+      
+      &::placeholder {
+        opacity: .5;
+      }
+    }
+    
+    
+    .flex-row {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      
+      div {
+        width: 48%;
+      }
+    }
+    
+    .flex-column {
+      position: relative;
+      
+      label {
+        margin-top: 10px;
+      }
+      
+      button {
+        cursor: pointer;
+
+        position: absolute;
+        top: calc(50% - 12px);
+        left: calc(50% - 24px);
+        
+        display: block;
+        margin: 0 auto;
+        
+        width: 48px;
+        height: 48px;
+        
+        background-color: var(--cor-azul);
+        
+        border: none;
+        box-shadow: 2px 1px 5px #f1f2f3;
+        
+        border-radius: 50%;
+        transform: rotate(90deg);
+        
+        text-align: center;
+        
+        z-index: 9;
+        transition: .2s;
+        
+        &:hover {
+          box-shadow: 4px 2px 7px var(--cor-cinza);
+          background-color: #00b8c2;
+        }
+
+        /* &:active {
+          box-shadow: 2px 1px 5px #f1f2f3;
+          background-color: #00bfc9;
+        } */
+        
+        svg {
+          position: relative;
+          bottom: -1px;
+          width: var(--icon-size);
+          height: var(--icon-size);
+          fill: white;
+        }
+      }
+    }
+  }
+}
+
+.resultado {
+  width: 100%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  
+  .msg {
+    text-align: center;
+    margin: 40px 0;
+    
+    p {
+      margin: 10px 0;
+      
+      .de, .para {
+        font-weight: bold;
+        font-size: 2.1rem;
+      }
+      
+      .de-cod, .para-cod {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  
+  .info {
+    font-size: .85rem
+  }
+}
+
+.chartContainer {
+  position: relative;
+  width: 100%;
+  
+  padding: 0 10px;
+/*   height: 60vh; */ /* 200px */
+  
+  margin-bottom: 10px;
+  
+  #chart {
+    width: 100%;
+/*     height: 60vh; */
+  }
+}
+
+.disclaimer {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  padding: 0 10px;
+
+  p {
+    margin: 6px 0;
+    font-size: .85rem;
+
+  }
+}
+
+/* Media para dispositivos com device pixel ratio ~ 2.0 (Iphone 5/SE) */
+@media (max-resolution: 2dppx) {
+  html, body, input, button, select {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 720px) {
+  html, body, input, button, select {
+    font-size: 14px;
+  }
+  body {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
